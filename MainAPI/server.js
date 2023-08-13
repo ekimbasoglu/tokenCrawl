@@ -34,17 +34,8 @@ mongoose.connection.on('disconnected', function () {
     console.log('Mongoose default connection disconnected');
 });
 
-// Cors
 app.use(cors());
-
-// Middleware for parsing JSON request bodies
 app.use(express.json());
-
-// Define a schema for your data
-const schema = new mongoose.Schema({
-    name: String,
-    age: Number,
-});
 
 app.get('/', (req, res) => {
     res.status(200).send("Success");
@@ -66,15 +57,3 @@ app.use('/cart', cart);
 app.listen(process.env.PORT || 80, () => {
     console.log(`Server is running on port ${process.env.PORT}`);
 });
-
-// https.createServer(
-//     // Provide the private and public key to the server by reading each
-//     // file's content with the readFileSync() method.
-//     {
-//         key: fs.readFileSync("key.pem"),
-//         cert: fs.readFileSync("cert.pem"),
-//     },
-//     app
-// ).listen(process.env.PORT, () => {
-//     console.log("server is runing at port", process.env.PORT);
-// });
