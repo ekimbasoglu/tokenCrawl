@@ -43,13 +43,11 @@ app.get('/', (req, res) => {
 
 // Imports 
 const users = require('./routes/User');
-const products = require('./routes/Product');
-const cart = require('./routes/Cart');
+const transactions = require('./routes/Transaction');
 
 //Routers
 app.use('/user', users);
-app.use('/product', products);
-app.use('/cart', cart);
+app.use('/transaction', transactions);
 
 
 
